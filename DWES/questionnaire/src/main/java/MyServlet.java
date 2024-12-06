@@ -40,7 +40,7 @@ public class MyServlet extends HttpServlet {
 			}
 			case "doQuestionnaire": {
 				// Load questionnaire (ArrayList of questions) and send it
-				ArrayList<Question> questionnaire = AccessData.loadContactsFromFile();
+				ArrayList<Question> questionnaire = AccessData.loadQuestionsFromFile();
 				
 				// Set attribute and redirect to the actual questionnaire
 				getServletContext().setAttribute("questionnaire", questionnaire);
@@ -49,7 +49,7 @@ public class MyServlet extends HttpServlet {
 			}
 			case "correctQuestionnaire": {
 				if (getServletContext().getAttribute("highestScore") == null) {
-					getServletContext().setAttribute("highestScore", 0); // Default to 0 if not set
+				    getServletContext().setAttribute("highestScore", 0); // Default to 0 if not set
 				    getServletContext().setAttribute("highestScoreUser", "John Doe");
 				}
 				
@@ -91,10 +91,10 @@ public class MyServlet extends HttpServlet {
 				String answer4 = request.getParameter("answer4");
 				
 				// Method to clean up answers
-			    answer1 = cleanUpString(answer1);
-			    answer2 = cleanUpString(answer2);
-			    answer3 = cleanUpString(answer3);
-			    answer4 = cleanUpString(answer4);
+			    	answer1 = cleanUpString(answer1);
+			    	answer2 = cleanUpString(answer2);
+			    	answer3 = cleanUpString(answer3);
+			    	answer4 = cleanUpString(answer4);
 				
 				// Depending on the correct answer, we modify it
 				switch (correctAnswer) {
@@ -119,7 +119,7 @@ public class MyServlet extends HttpServlet {
 				Question newQuestion = new Question(question, answers);
 				
 				// Save the new question in the CSV file
-				AccessData.writeContactToFile(newQuestion);
+				AccessData.writeQuestionToFile(newQuestion);
 				
 				// Redirect to home page
 				response.sendRedirect("index.jsp");
