@@ -45,14 +45,14 @@ public class MyServlet extends HttpServlet {
 				break;
 			}
 			case "viewProducts": {
-                // Get products from DB.
-                List<Product> productList = AccessData.getAllProducts();
+                		// Get products from DB.
+                		List<Product> productList = AccessData.getAllProducts();
                 
-                // Send products to JSP.
-                request.setAttribute("productList", productList);
-                request.getRequestDispatcher("viewProducts.jsp").forward(request, response);
-                break;
-            }
+                		// Send products to JSP.
+                		request.setAttribute("productList", productList);
+                		request.getRequestDispatcher("viewProducts.jsp").forward(request, response);
+                		break;
+            		}
 			case "buyProduct": {
 				int productId = Integer.parseInt(request.getParameter("productId"));
 				
@@ -60,7 +60,7 @@ public class MyServlet extends HttpServlet {
 				AccessData.reduceStockByOne(productId);
 				
 				// Redirect to view updated product list
-		        response.sendRedirect("MyServlet?action=viewProducts");
+		        	response.sendRedirect("MyServlet?action=viewProducts");
 				break;
 			}
 			case "returnHome": {
