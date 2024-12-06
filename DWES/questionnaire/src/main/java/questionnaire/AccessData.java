@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class AccessData {
 	
 	// Method to write a new question into the CSV file
-    public static void writeContactToFile(Question newQuestion) {
+    public static void writeQuestionToFile(Question newQuestion) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("questionnaire.csv", true))) {
             writer.write(newQuestion.toCSV());
             writer.newLine();
@@ -20,7 +20,7 @@ public class AccessData {
     }
     
     // Load all questions from CSV into an array
-    public static ArrayList<Question> loadContactsFromFile() {
+    public static ArrayList<Question> loadQuestionsFromFile() {
     	ArrayList<Question> questionnaire = new ArrayList<Question>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader("questionnaire.csv"))) {
