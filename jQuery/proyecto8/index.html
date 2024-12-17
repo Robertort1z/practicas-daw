@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto8</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <!-- https://www.omdbapi.com/?i=tt3896198&apikey=
+  6ed2f4bf -->
+  <div id="main">
+    <input type="radio" name="peliculas" id="peliculas">
+    <label for="peliculas">Peliculas</label>
+    <input type="radio" name="peliculas" id="series">
+    <label for="series">Series</label>
+
+    <input type="text" name="text" id="text">
+    <button id="search" class="control">Search</button>
+    <div id="controls">
+      <button id="backward" class="control">&lt;&lt;</button>
+      <button id="fordward" class="control">&gt;&gt;</button>
+    </div>
+    <div id="poster"></div>
+    <div id="title"></div>
+    <div id="year"></div>
+  </div>
+</body>
+
+</html>
